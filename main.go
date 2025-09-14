@@ -49,7 +49,7 @@ var profile = Profile{
 	Name:     "Sai Teja Bandamidi",
 	Role:     "Software Engineer — Software Development / Agile / Go / Python / SQL / GraphQL",
 	Location: "Phoenix, AZ, USA",
-	Email:    "you@example.com",
+	Email:    "saitejabatwork@gmail.com",
 	Links: []Link{
 		{Label: "GitHub", URL: "https://github.com/SaiTejaBandamidi"},
 		{Label: "Blog", URL: "https://medium.com/@bsaiteja"},

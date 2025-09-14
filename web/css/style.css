@@ -1,0 +1,102 @@
+:root{
+  --bg:#05070c;
+  --grid:#0a1624;
+  --primary:#37e3ff;
+  --accent:#45ffa2;
+  --warn:#ff6b6b;
+  --text:#d7f9ff;
+  --muted:#7acfe3;
+  --ring: rgba(55,227,255,.18);
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100%; margin:0; background:radial-gradient(1200px 800px at 50% 40%,#07111a 0%,var(--bg) 60%, #000 100%); color:var(--text); font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+
+/* Animated holo grid */
+.grid{
+  position:fixed; inset:0; pointer-events:none; opacity:.35;
+  background:
+    linear-gradient(transparent 95%, var(--grid) 95%),
+    linear-gradient(90deg, transparent 95%, var(--grid) 95%);
+  background-size: 60px 60px;
+  animation:gridflow 18s linear infinite;
+}
+@keyframes gridflow { 0%{ background-position:0 0,0 0 } 100%{ background-position:0 60px,60px 0 } }
+
+/* HUD rings */
+.hud{ position:fixed; inset:0; display:grid; place-items:center; pointer-events:none; }
+.ring { position:absolute; border:1px solid var(--ring); border-radius:50%; box-shadow:0 0 12px var(--ring); }
+.r2{ width:520px; height:520px; animation:spin 22s linear infinite; }
+.r3{ width:860px; height:860px; animation:spin 34s linear infinite reverse; }
+.r1{ width:360px; height:360px; animation:spin 14s linear infinite reverse; } 
+.r4{ width:300px; height:300px; animation:spin 18s linear infinite; }
+@keyframes spin { 0%{ transform:rotate(0deg) } 100%{ transform:rotate(360deg) } } 
+
+#skills {
+  display: grid;
+  gap: 10px;
+}
+#skills .card {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.console-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.console-input input {
+  flex: 1;
+}
+
+/* Scanner beam
+.scanner{
+  position:absolute; width:3px; height:70vh;
+  background:linear-gradient(var(--primary),transparent);
+  box-shadow:0 0 12px var(--primary);
+  animation:sweep 5s linear infinite;
+  transform-origin:50% 85%;
+}
+@keyframes sweep { 0%{ transform:rotate(-25deg) } 50%{ transform:rotate(25deg) } 100%{ transform:rotate(-25deg) } } */
+
+.shell{ position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:24px }
+header{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px; margin-bottom:16px }
+.brand{ display:flex; align-items:center; gap:14px }
+.brand .dot{ width:14px; height:14px; border-radius:50%; background:var(--primary); box-shadow:0 0 12px var(--primary) }
+.brand h1{ margin:0; font-size:20px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+
+.toolbar{ display:flex; gap:10px }
+.btn{ border:1px solid rgba(55,227,255,.35); background:rgba(7,17,26,.4); padding:8px 12px; border-radius:10px; color:var(--text); backdrop-filter:blur(6px); cursor:pointer }
+.btn:hover{ border-color:var(--primary); box-shadow:0 0 10px var(--ring) }
+
+main{ display:grid; grid-template-columns:340px 1fr; gap:16px }
+.panel{ position:relative; border:1px solid rgba(55,227,255,.25); background:rgba(5,7,12,.6); border-radius:16px; overflow:hidden }
+.panel h2{ margin:0; padding:14px 16px; font-size:14px; letter-spacing:.25em; text-transform:uppercase; background:linear-gradient(90deg, rgba(55,227,255,.12), transparent); border-bottom:1px solid rgba(55,227,255,.2) }
+.panel .content{ padding:14px 16px }
+
+.status{ display:grid; grid-template-columns:1fr 1fr; gap:10px }
+.card{ border:1px dashed rgba(55,227,255,.25); border-radius:12px; padding:10px; background:rgba(2,4,8,.65) }
+.metric{ font-size:28px; margin:0 }
+.meta{ opacity:.8; font-size:12px; margin-top:2px }
+
+.terminal{ font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:#aaf; background:rgba(2,4,8,.8); border-radius:12px; padding:10px; height:220px; overflow:auto; border:1px solid rgba(55,227,255,.25) }
+.terminal .prompt{ color:var(--accent) }
+#cmd{ width:100%; background:transparent; border:none; outline:none; color:var(--text); padding:8px 0 }
+
+.list{ display:grid; gap:10px }
+.tag{ display:inline-flex; gap:6px; align-items:center; border:1px solid rgba(55,227,255,.25); padding:6px 10px; border-radius:999px; font-size:12px; transition:transform .15s ease, box-shadow .15s ease }
+.tag:hover{ transform:translateY(-1px); box-shadow:0 0 10px var(--ring) }
+
+a{ color:var(--primary); text-decoration:none }
+a:hover{ text-decoration:underline }
+
+footer{ opacity:.75; margin-top:18px; font-size:12px; text-align:center }
+
+/* Toasts */
+.toast{ position:fixed; right:16px; bottom:16px; display:grid; gap:8px; z-index:4 }
+.toast .t{ border:1px solid rgba(55,227,255,.3); background:rgba(7,17,26,.8); padding:10px 12px; border-radius:10px }
+
+/* Responsive */
+@media (max-width: 900px) { main{ grid-template-columns:1fr } }

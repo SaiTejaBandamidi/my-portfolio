@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SAI - THE SOFTWARE ENGINEER</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+  <!-- Animated background grid + rings -->
+  <div class="grid"></div>
+  <div class="hud">
+    <img class="ring r3" src="/assets/ring.svg" alt="ring"/>
+    <img class="ring r2" src="/assets/ring.svg" alt="ring"/>
+    <img class="ring r1" src="/assets/ring.svg" alt="ring"/>
+    <img class="ring r4" src="/assets/sai.svg" alt="SAITEJA"/>
+  </div>
+
+  <div class="shell">
+    <header>
+      <div class="brand">
+        <div class="dot"></div>
+        <h1 id="brand">SAI - THE SOFTWARE ENGINEER</h1>
+      </div>
+      <div class="toolbar">
+        <!-- Removed mic button from here -->
+        <button class="btn" id="themeBtn">🌓 Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Operator</h2>
+        <div class="content" id="profile"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Console</h2>
+        <div class="content">
+          <div class="terminal" id="term"></div>
+          <div class="console-input">
+            <input id="cmd" placeholder="Type: help | theme neon | open about | list projects | ping"/>
+            <button class="btn" id="micBtn" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Skills</h2>
+        <div class="content" id="skills"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Projects</h2>
+        <div class="content" id="projects"></div>
+      </section>
+    </main>
+
+    <footer>HUD online · <span id="clock"></span> · <span id="latency">—</span></footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

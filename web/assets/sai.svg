@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .orbit {
+        transform-origin: 250px 250px; /* center of SVG */
+        animation: spin 20s linear infinite; /* slow infinite spin */
+      }
+      .letter {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        fill: #37e3ff;
+        filter: url(#glow);
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      @keyframes spin {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <!-- Neon glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Letters arranged around a circle radius=170 -->
+  <g class="orbit">
+    <text class="letter" x="250" y="80">S</text>
+    <text class="letter" x="385" y="150">A</text>
+    <text class="letter" x="420" y="310">I</text>
+    <text class="letter" x="330" y="430">T</text>
+    <text class="letter" x="170" y="430">E</text>
+    <text class="letter" x="80"  y="310">J</text>
+    <text class="letter" x="115" y="150">A</text>
+  </g>
+</svg>
